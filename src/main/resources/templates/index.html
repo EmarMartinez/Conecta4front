@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/partidas/newgame">
+        <table>
+            <tr><td>Nombre:</td><td><input type="text" name="nombre" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Crear Partida" /></td></tr>
+        </table>
+    </form>
+</div>
+<div>
+    <ul>
+        <li th:each="partida : ${partidas}">
+            <a th:href="${partida}" th:text="${partida}" />
+        </li>
+    </ul>
+</div>
+</body>
+</html>
